@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SGPA Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      background: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    select {
+      padding: 5px;
+      font-size: 14px;
+    }
+    button {
+      display: block;
+      width: 200px;
+      margin: 0 auto;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .result {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>RVR-JC(R24) 1st sem SGPA Calculator</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Credits</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Linear Algebra, Calculus and Differential Equations</td>
+          <td>3.0</td>
+          <td>
+            <select id="subject1">
+              <option value="10">A+ (10)</option>
+              <option value="9">A (9)</option>
+              <option value="8">B (8)</option>
+              <option value="7">C (7)</option>
+              <option value="6">D (6)</option>
+              <option value="5">E (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Engineering Physics</td>
+          <td>3.0</td>
+          <td>
+            <select id="subject2">
+              <option value="10">A+ (10)</option>
+              <option value="9">A (9)</option>
+              <option value="8">B (8)</option>
+              <option value="7">C (7)</option>
+              <option value="6">D (6)</option>
+              <option value="5">E (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Basic Electrical and Electronics Engineering</td>
+          <td>3.0</td>
+          <td>
+            <select id="subject3">
+              <option value="10">A+ (10)</option>
+              <option value="9">A (9)</option>
+              <option value="8">B (8)</option>
+              <option value="7">C (7)</option>
+              <option value="6">D (6)</option>
+              <option value="5">E (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Programming for Problem Solving</td>
+          <td>4.0</td>
+          <td>
+            <select id="subject4">
+              <option value="10">A+ (10)</option>
+              <option value="9">A (9)</option>
+              <option value="8">B (8)</option>
+              <option value="7">C (7)</option>
+              <option value="6">D (6)</option>
+              <option value="5">E (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Engineering Physics Lab</td>
+          <td>1.0</td>
+          <td>
+            <select id="subject5">
+              <option value="10">A+ (10)</option>
+              <option value="9">A (9)</option>
+              <option value="8">B (8)</option>
+              <option value="7">C (7)</option>
+              <option value="6">D (6)</option>
+              <option value="5">E (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Basic Electrical and Electronics Engineering Lab</td>
+          <td>1.0</td>
+          <td>
+            <select id="subject6">
+              <option value="10">A+ (10)</option>
+              <option value="9">A (9)</option>
+              <option value="8">B (8)</option>
+              <option value="7">C (7)</option>
+              <option value="6">D (6)</option>
+              <option value="5">E (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Programming for Problem Solving Lab</td>
+          <td>1.5</td>
+          <td>
+            <select id="subject7">
+              <option value="10">A+ (10)</option>
+              <option value="9">A (9)</option>
+              <option value="8">B (8)</option>
+              <option value="7">C (7)</option>
+              <option value="6">D (6)</option>
+              <option value="5">E (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Engineering Graphics</td>
+          <td>2.0</td>
+          <td>
+            <select id="subject8">
+              <option value="10">A+ (10)</option>
+              <option value="9">A (9)</option>
+              <option value="8">B (8)</option>
+              <option value="7">C (7)</option>
+              <option value="6">D (6)</option>
+              <option value="5">E (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>NSS / NCC / Community Service</td>
+          <td>0.5</td>
+          <td>
+            <select id="subject9">
+              <option value="10">A+ (10)</option>
+              <option value="9">A (9)</option>
+              <option value="8">B (8)</option>
+              <option value="7">C (7)</option>
+              <option value="6">D (6)</option>
+              <option value="5">E (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="calculateSGPA()">Calculate SGPA</button>
+    <div class="result" id="result">
+      <!-- SGPA result will be shown here -->
+    </div>
+  </div>
+
+  <script>
+    function calculateSGPA() {
+      // Define the credits for each subject (in order)
+      const credits = [3.0, 3.0, 3.0, 4.0, 1.0, 1.0, 1.5, 2.0, 0.5];
+      const totalCredits = 19.0; // Sum of all credits
+      let totalGradePoints = 0;
+
+      // Loop through each subject (IDs subject1 to subject9)
+      for (let i = 1; i <= 9; i++) {
+        const gradeValue = parseFloat(document.getElementById('subject' + i).value);
+        totalGradePoints += gradeValue * credits[i - 1];
+      }
+
+      // Calculate SGPA (grade points divided by total credits)
+      let sgpa = totalGradePoints / totalCredits;
+      sgpa = sgpa.toFixed(2); // Format to 2 decimal places
+
+      document.getElementById('result').innerHTML = "Your SGPA is: " + sgpa;
+    }
+  </script>
+</body>
+</html>
