@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SGPA Calculator</title>
+  <title>SGPA & CGPA Calculator</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,6 +22,23 @@
       text-align: center;
       margin-bottom: 20px;
     }
+    .input-group {
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    .input-group label {
+      margin-right: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .input-group input {
+      padding: 8px;
+      font-size: 16px;
+      width: 120px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -35,38 +52,47 @@
       text-align: left;
     }
     th {
-      background-color: #4CAF50;
+      background-color: #007BFF;
       color: white;
     }
     select {
+      width: 100%;
       padding: 5px;
       font-size: 14px;
     }
     button {
       display: block;
-      width: 200px;
+      width: 250px;
       margin: 0 auto;
-      padding: 10px;
-      font-size: 16px;
-      background-color: #4CAF50;
+      padding: 12px;
+      font-size: 18px;
+      background-color: #007BFF;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #45a049;
+      background-color: #0056b3;
     }
     .result {
       text-align: center;
-      font-size: 20px;
-      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 25px;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>RVR-JC(R24) 1st sem SGPA Calculator</h1>
+    <h1>RVR-JC(R24) 2nd Sem SGPA & CGPA Calculator</h1>
+
+    <div class="input-group">
+      <label for="sem1_sgpa">Enter 1st Semester SGPA:</label>
+      <input type="number" id="sem1_sgpa" step="0.01" min="0" max="10" placeholder="e.g., 8.50" required>
+    </div>
+
     <table>
       <thead>
         <tr>
@@ -77,166 +103,145 @@
       </thead>
       <tbody>
         <tr>
-          <td>Linear Algebra, Calculus and Differential Equations</td>
+          <td>Maths</td>
           <td>3.0</td>
           <td>
             <select id="subject1">
-              <option value="10">A+ (10)</option>
-              <option value="9">A (9)</option>
-              <option value="8">B (8)</option>
-              <option value="7">C (7)</option>
-              <option value="6">D (6)</option>
-              <option value="5">E (5)</option>
-              <option value="0">F (0)</option>
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
             </select>
           </td>
         </tr>
         <tr>
-          <td>Engineering Physics</td>
-          <td>3.0</td>
-          <td>
-            <select id="subject2">
-              <option value="10">A+ (10)</option>
-              <option value="9">A (9)</option>
-              <option value="8">B (8)</option>
-              <option value="7">C (7)</option>
-              <option value="6">D (6)</option>
-              <option value="5">E (5)</option>
-              <option value="0">F (0)</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Basic Electrical and Electronics Engineering</td>
-          <td>3.0</td>
-          <td>
-            <select id="subject3">
-              <option value="10">A+ (10)</option>
-              <option value="9">A (9)</option>
-              <option value="8">B (8)</option>
-              <option value="7">C (7)</option>
-              <option value="6">D (6)</option>
-              <option value="5">E (5)</option>
-              <option value="0">F (0)</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Programming for Problem Solving</td>
-          <td>4.0</td>
-          <td>
-            <select id="subject4">
-              <option value="10">A+ (10)</option>
-              <option value="9">A (9)</option>
-              <option value="8">B (8)</option>
-              <option value="7">C (7)</option>
-              <option value="6">D (6)</option>
-              <option value="5">E (5)</option>
-              <option value="0">F (0)</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Engineering Physics Lab</td>
-          <td>1.0</td>
-          <td>
-            <select id="subject5">
-              <option value="10">A+ (10)</option>
-              <option value="9">A (9)</option>
-              <option value="8">B (8)</option>
-              <option value="7">C (7)</option>
-              <option value="6">D (6)</option>
-              <option value="5">E (5)</option>
-              <option value="0">F (0)</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Basic Electrical and Electronics Engineering Lab</td>
-          <td>1.0</td>
-          <td>
-            <select id="subject6">
-              <option value="10">A+ (10)</option>
-              <option value="9">A (9)</option>
-              <option value="8">B (8)</option>
-              <option value="7">C (7)</option>
-              <option value="6">D (6)</option>
-              <option value="5">E (5)</option>
-              <option value="0">F (0)</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Programming for Problem Solving Lab</td>
-          <td>1.5</td>
-          <td>
-            <select id="subject7">
-              <option value="10">A+ (10)</option>
-              <option value="9">A (9)</option>
-              <option value="8">B (8)</option>
-              <option value="7">C (7)</option>
-              <option value="6">D (6)</option>
-              <option value="5">E (5)</option>
-              <option value="0">F (0)</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Engineering Graphics</td>
+          <td>Chemistry</td>
           <td>2.0</td>
           <td>
-            <select id="subject8">
-              <option value="10">A+ (10)</option>
-              <option value="9">A (9)</option>
-              <option value="8">B (8)</option>
-              <option value="7">C (7)</option>
-              <option value="6">D (6)</option>
-              <option value="5">E (5)</option>
-              <option value="0">F (0)</option>
+            <select id="subject2">
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
             </select>
           </td>
         </tr>
         <tr>
-          <td>NSS / NCC / Community Service</td>
-          <td>0.5</td>
+          <td>English</td>
+          <td>2.0</td>
+          <td>
+            <select id="subject3">
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Digital Logic Design</td>
+          <td>3.0</td>
+          <td>
+            <select id="subject4">
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Python Programming</td>
+          <td>2.0</td>
+          <td>
+            <select id="subject5">
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Data Structures</td>
+          <td>4.0</td>
+          <td>
+            <select id="subject6">
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Engineering Chemistry Lab</td>
+          <td>1.0</td>
+          <td>
+            <select id="subject7">
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Communication English Lab</td>
+          <td>1.0</td>
+          <td>
+            <select id="subject8">
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Python Programming Lab</td>
+          <td>1.0</td>
           <td>
             <select id="subject9">
-              <option value="10">A+ (10)</option>
-              <option value="9">A (9)</option>
-              <option value="8">B (8)</option>
-              <option value="7">C (7)</option>
-              <option value="6">D (6)</option>
-              <option value="5">E (5)</option>
-              <option value="0">F (0)</option>
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Data Structures Lab</td>
+          <td>1.5</td>
+          <td>
+            <select id="subject10">
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Yoga, Sports & Health</td>
+          <td>0.5</td>
+          <td>
+            <select id="subject11">
+              <option value="10">A+ (10)</option><option value="9">A (9)</option><option value="8">B (8)</option><option value="7">C (7)</option><option value="6">D (6)</option><option value="5">E (5)</option><option value="0">F (0)</option>
             </select>
           </td>
         </tr>
       </tbody>
     </table>
-    <button onclick="calculateSGPA()">Calculate SGPA</button>
+    <button onclick="calculateCGPA()">Calculate SGPA & CGPA</button>
     <div class="result" id="result">
-      <!-- SGPA result will be shown here -->
-    </div>
+      </div>
   </div>
 
   <script>
-    function calculateSGPA() {
-      // Define the credits for each subject (in order)
-      const credits = [3.0, 3.0, 3.0, 4.0, 1.0, 1.0, 1.5, 2.0, 0.5];
-      const totalCredits = 19.0; // Sum of all credits
-      let totalGradePoints = 0;
+    function calculateCGPA() {
+      // --- Get 1st Semester SGPA ---
+      const sem1SGPA = parseFloat(document.getElementById('sem1_sgpa').value);
+      if (isNaN(sem1SGPA) || sem1SGPA < 0 || sem1SGPA > 10) {
+        alert("Please enter a valid 1st Semester SGPA between 0 and 10.");
+        return;
+      }
+      
+      // --- Calculate 2nd Semester SGPA ---
+      const credits_sem2 = [3.0, 2.0, 2.0, 3.0, 2.0, 4.0, 1.0, 1.0, 1.0, 1.5, 0.5];
+      const totalCredits_sem2 = 21.0;
+      let totalGradePoints_sem2 = 0;
 
-      // Loop through each subject (IDs subject1 to subject9)
-      for (let i = 1; i <= 9; i++) {
+      for (let i = 1; i <= 11; i++) {
         const gradeValue = parseFloat(document.getElementById('subject' + i).value);
-        totalGradePoints += gradeValue * credits[i - 1];
+        totalGradePoints_sem2 += gradeValue * credits_sem2[i - 1];
       }
 
-      // Calculate SGPA (grade points divided by total credits)
-      let sgpa = totalGradePoints / totalCredits;
-      sgpa = sgpa.toFixed(2); // Format to 2 decimal places
+      const sgpa_sem2 = totalGradePoints_sem2 / totalCredits_sem2;
 
-      document.getElementById('result').innerHTML = "Your SGPA is: " + sgpa;
+      // --- Calculate Overall CGPA ---
+      const totalCredits_sem1 = 19.0;
+      const totalGradePoints_sem1 = sem1SGPA * totalCredits_sem1;
+      
+      const totalCGPAPoints = totalGradePoints_sem1 + totalGradePoints_sem2;
+      const totalCGPACredits = totalCredits_sem1 + totalCredits_sem2;
+
+      const cgpa = totalCGPAPoints / totalCGPACredits;
+      
+      // --- Display Results ---
+      document.getElementById('result').innerHTML = 
+        "Your 2nd Semester SGPA is: " + sgpa_sem2.toFixed(2) + 
+        "<br>Your Overall CGPA is: " + cgpa.toFixed(2);
     }
   </script>
 </body>
